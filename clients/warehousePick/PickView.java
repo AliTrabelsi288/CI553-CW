@@ -70,6 +70,8 @@ public class PickView implements Observer
     cp.add( theSP );                                //  Add to canvas
     theSP.getViewport().add( theOutput );           //  In TextArea
     rootWindow.setVisible( true );                  // Make visible
+    
+    cp.setBackground(Color.GRAY);					//Sets background colour
   }
   
   public void setController( PickController c )

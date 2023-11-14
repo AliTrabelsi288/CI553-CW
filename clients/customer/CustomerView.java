@@ -47,7 +47,8 @@ public class CustomerView implements Observer
    * @param y     y-cordinate of position of window on screen  
    */
   
-  public CustomerView( RootPaneContainer rpc, MiddleFactory mf, int x, int y )
+  @SuppressWarnings("null")
+public CustomerView( RootPaneContainer rpc, MiddleFactory mf, int x, int y )
   {
     try                                             // 
     {      
@@ -94,6 +95,9 @@ public class CustomerView implements Observer
     
     rootWindow.setVisible( true );                  // Make visible);
     theInput.requestFocus();                        // Focus is here
+    
+    cp.setBackground(Color.GRAY);					//Sets background colour
+    
   }
 
    /**

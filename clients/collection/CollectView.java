@@ -74,6 +74,8 @@ public class CollectView implements Observer
     theSP.getViewport().add( theOutput );           //  In TextArea
     rootWindow.setVisible( true );                  // Make visible
     theInput.requestFocus();                        // Focus is here
+    
+    cp.setBackground(Color.GRAY);					//Sets background colour
   }  
   
   public void setController( CollectController c )

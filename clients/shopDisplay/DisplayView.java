@@ -5,6 +5,11 @@ import middle.OrderException;
 
 import javax.swing.*;
 import java.awt.*;
+import javax.sound.sampled.*;
+import java.io.File;
+
+import java.util.HashMap;
+
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.List;
@@ -27,6 +32,10 @@ public class DisplayView extends Canvas implements Observer
   private String textToDisplay = "";
   private DisplayController cont= null;
   
+  
+  public class innerClass {
+	  
+  }
   /**
    * Construct the view
    * @param rpc   Window in which to construct
@@ -45,6 +54,9 @@ public class DisplayView extends Canvas implements Observer
     rootWindow.add( this, BorderLayout.CENTER );    //  Add to rootwindow
     
     rootWindow.setVisible( true );                  // Make visible
+    
+    DisplayMusic music = new DisplayMusic(); 		//creates new instance of Music class
+    music.playPlaylist(); 							//calls playPlayist method within Music class
   }
   
   
@@ -165,4 +177,10 @@ public class DisplayView extends Canvas implements Observer
     }
     return res;
   }
+  
+  
 }
+
+
+
+

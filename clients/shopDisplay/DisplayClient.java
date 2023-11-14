@@ -26,6 +26,7 @@ public class DisplayClient
     mrf.setStockRWInfo( stockURL );
     mrf.setOrderInfo  ( orderURL );        //
     displayGUI(mrf);                       // Create GUI
+    
   }
   
   private static void displayGUI(MiddleFactory mf)
@@ -42,5 +43,6 @@ public class DisplayClient
 
     model.addObserver( view );       // Add observer to the model
     window.setVisible(true);         // Display Screen 
+    
   }
 }
