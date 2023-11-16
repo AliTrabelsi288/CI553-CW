@@ -5,10 +5,6 @@ import middle.OrderException;
 
 import javax.swing.*;
 import java.awt.*;
-import javax.sound.sampled.*;
-import java.io.File;
-
-import java.util.HashMap;
 
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
@@ -32,10 +28,6 @@ public class DisplayView extends Canvas implements Observer
   private String textToDisplay = "";
   private DisplayController cont= null;
   
-  
-  public class innerClass {
-	  
-  }
   /**
    * Construct the view
    * @param rpc   Window in which to construct

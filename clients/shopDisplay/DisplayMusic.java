@@ -62,6 +62,7 @@ public class DisplayMusic {
     
     /**
      * Returns true if a song is currently being played
+     * JUnit
      * @return True/False value
      */
     protected boolean isMusicPlaying() { //method used by JUnit test
@@ -76,6 +77,7 @@ public class DisplayMusic {
     
     /**
      * Returns the current value of the counter
+     * JUnit
      * @return Counter
      */
     protected int getCounter() {

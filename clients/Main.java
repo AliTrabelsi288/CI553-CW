@@ -11,6 +11,7 @@ import clients.collection.CollectView;
 import clients.customer.CustomerController;
 import clients.customer.CustomerModel;
 import clients.customer.CustomerView;
+import clients.shopDisplay.DisplayAdvertisement;
 import clients.shopDisplay.DisplayController;
 import clients.shopDisplay.DisplayModel;
 import clients.shopDisplay.DisplayView;
@@ -59,6 +60,7 @@ class Main
       startPickGUI_MVC( mlf );
     startPickGUI_MVC( mlf );
     startDisplayGUI_MVC( mlf );
+    startDisplayAds();
     if ( many ) 
       startDisplayGUI_MVC( mlf );
     startCollectionGUI_MVC( mlf );
@@ -152,8 +154,22 @@ class Main
     model.addObserver( view );       // Add observer to the model
     window.setVisible(true);         // Make window visible
   }
+  
+  /**
+   * Creates new instance of DisplayAvertisements
+   */
+  private static void startDisplayAds() {
+	  JFrame  window = new JFrame();	//creates new window object 
+	  
+	  window.setTitle( "Advertisements Client");	//sets title of window to Advertisements Client
+	  window.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );	//closes window when exited
+	  
+	  DisplayAdvertisement ads = new DisplayAdvertisement(window, 0, 0);	//instance of DisplayAdvertisements - passes window object and coordinates
+	  
+	  window.setVisible(true);         // Make window visible
+  }
 
-
+  
   public void startCollectionGUI_MVC(MiddleFactory mlf )
   {
     JFrame  window = new JFrame();
