@@ -26,10 +26,14 @@ public class DisplayAdvertisement extends Canvas
   
   private Picture thePicture = new Picture(300,300);	//creates instance of Picture class, sets width/height
   
-  
+  /**
+   * Empty constructor method 
+   * Used for JUnit test
+   */
   public DisplayAdvertisement(){
 	  
   }
+  
   /**
    * Construct the view
    * @param rpc   Window in which to construct
@@ -60,7 +64,7 @@ public class DisplayAdvertisement extends Canvas
    * Created object of Update class (extends TimerTask class)
    * Sets up timer to call a task every 15 seconds
    */
-  public void timer(){
+  private void timer(){
 	  Timer timer = new Timer();		//timer object
 	  TimerTask task = new Update();	//timertask object
 	  
@@ -92,7 +96,7 @@ public class DisplayAdvertisement extends Canvas
    * Randomly picks number between 0-4
    * Used as pointer for advert array
    */
-  public void randomGenerator(){
+  protected void randomGenerator(){
 	  Random random = new Random();			//creates random instance
 	  currentCounter = random.nextInt(4);	//sets counter to random number between 0-4
 	  
@@ -110,7 +114,7 @@ public class DisplayAdvertisement extends Canvas
    * JUnit
    * @return currentCounter
    */
-  public int getCurrentCounter(){
+  protected int getCurrentCounter(){
 	  return currentCounter;	//returns currentCounter
   }
   
@@ -119,7 +123,7 @@ public class DisplayAdvertisement extends Canvas
    * JUnit
    * @return currentCounter
    */
-  public int getLastCounter(){
+  protected int getLastCounter(){
 	  return lastCounter;		//returns lastCounter
   }
 }

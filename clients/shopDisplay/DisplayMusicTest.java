@@ -13,7 +13,7 @@ import clients.shopDisplay.DisplayMusic;
  * @author  Ali Trabelsi
  * @version 1.0
  */
-class DisplayViewTest {
+class DisplayMusicTest {
 
 	/**
 	 * Tests if play list can be created, and the method is playing them in the correct order
