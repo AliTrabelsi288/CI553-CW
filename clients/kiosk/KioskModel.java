@@ -240,6 +240,7 @@ public class KioskModel extends Observable {
        * @param CVC		Card CVC
        */
       public void doPay(String cardNum, String MM, String YY, String CVC){
+    	  theBasket = null;														//Sets theBasket to null
     	  String theAction = "";												//Sets theAction to clear						
     	  int    amount  = 1;													//Amount is one
     	  try {																	//True
