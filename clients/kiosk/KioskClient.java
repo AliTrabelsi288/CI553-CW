@@ -10,7 +10,7 @@ import middle.RemoteMiddleFactory;
 import javax.swing.*;
 
 /**
- * The standalone Customer Client
+ * The standalone Kiosk Client
  * @author  Mike Smith University of Brighton
  * @version 2.0
  */

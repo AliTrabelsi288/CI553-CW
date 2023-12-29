@@ -34,6 +34,17 @@ public class Product implements Serializable
     theQuantity    = aQuantity;       // Quantity involved
   }
   
+  /**
+   * Constructs a product with only a number and description
+   * Used for catalogue functionality
+   * @param aProductNum
+   * @param aDescription
+   */
+  public Product( String aProductNum, String aDescription) {
+	  theProductNum  = aProductNum;     // Product number
+	  theDescription = aDescription;    // Description of product
+  }
+  
   public String getProductNum()  { return theProductNum; }
   public String getDescription() { return theDescription; }
   public double getPrice()       { return thePrice; }

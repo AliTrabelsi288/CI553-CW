@@ -14,6 +14,7 @@ import middle.StockReader;
 
 import javax.swing.*;
 import java.sql.*;
+import java.util.ArrayList;
 
 // There can only be 1 ResultSet opened per statement
 // so no simultaneous use of the statement object
@@ -48,7 +49,7 @@ public class StockR implements StockReader
                     dbDriver.username(), 
                     dbDriver.password() );
 
-      theStmt = theCon.createStatement();
+      theStmt = theCon.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
       theCon.setAutoCommit( true );
     }
     catch ( SQLException e )
@@ -171,5 +172,44 @@ public class StockR implements StockReader
     //DEBUG.trace( "DB StockR: getImage -> %s", filename );
     return new ImageIcon( filename );
   }
-
+  
+  /**
+   * Returns product number and description of any products matching a product type
+   * @param pType The product type
+   * @return Product object
+   */
+  public synchronized ArrayList<Product> getNumber( String pType )
+	         throws StockException
+	  {
+	    try{													//Try 
+	     ArrayList<Product> returnArray = new ArrayList<>();	//Declares ArrayList of type product
+	     
+	      ResultSet rs = getStatementObject().executeQuery(		//Executes SQL statement and stores in rs
+	        "select productNo, description " +
+	        "  from ProductTable " +
+	        "  where  productType = '" + pType + "' " 
+	      );
+	      
+	      int rows = 0;											//Stores rows in rs
+	      
+	      while(rs.next()){										//While rs has a next row
+	        rows = rows +1;										//Increments rows by one
+	      }
+	      
+	      rs.beforeFirst();										//Sets pointer to before the first returned value
+	      
+	      for(int i = 0; i < rows; i++){						//Loops for the value of rows
+	    	  rs.next();										//Sets pointer to next line
+	    	  returnArray.add(new Product(rs.getString("productNo"), rs.getString("description")));	 	//Adds Product to returnArray - uses getString method on both column names
+	      }
+	      
+	      rs.close();											//Closes rs
+	      
+	      return returnArray;									//Returns returnArray
+	     } 
+	    
+	    catch( SQLException e ){								//Catch any issues - throws StockException
+	      throw new StockException( "SQL getDetails: " + e.getMessage() );
+	    }
+	  }
 }

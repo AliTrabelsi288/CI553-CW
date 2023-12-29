@@ -8,8 +8,8 @@ import org.junit.jupiter.api.Test;
 
 /**
  * JUnit Tests for the DisplayAdvertisement class
- * Tests creating and playing of play list
- * Tests error handling
+ * Tests ImageIcon array
+ * Tests random number generator
  * @author  Ali Trabelsi
  * @version 1.0
  */

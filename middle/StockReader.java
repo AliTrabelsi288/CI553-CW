@@ -2,6 +2,8 @@ package middle;
 
 import catalogue.Product;
 
+import java.util.ArrayList;
+
 import javax.swing.*;
 
 /**
@@ -39,4 +41,13 @@ public interface StockReader
    */
   
   ImageIcon getImage(String pNum) throws StockException;
+  
+  /**
+   * Returns product details and number 
+   * @param pType Product type
+   * @return Product number, product name
+   * @throws StockException if issue
+   */
+  ArrayList<Product> getNumber(String pType) throws StockException;
+  
 }
