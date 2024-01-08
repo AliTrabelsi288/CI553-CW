@@ -299,7 +299,11 @@ public class KioskModel extends Observable {
 	  public void doClear()
 	  {
 	    String theAction = "";												//Clears theAction
-	    theBasket.clear();                        							//Clear basket
+	    
+	    if(theBasket != null) {												//If basket is not empty
+	    	theBasket.clear();  											//Clear basket
+	    }                      							
+	    
 	    theAction = " Search by Product Type,Search by Product Number";     //Set display text
 	    thePic = null;                            							//Removes picture
 	    setChanged(); notifyObservers(theAction);
